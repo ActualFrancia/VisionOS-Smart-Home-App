@@ -1,10 +1,6 @@
-# Smart Home App for Apple Vision Pro
-### Work in Progress
-
-<div style="display:flex; justify-content: space-between;">
-    <img src="screenshots/room_view.png" alt="Room View" width="48%">
-    <img src="screenshots/camera_feed.png" alt="Camera Feed" width="48%">
-</div>
+<h1 align="left">Smart Home App for Apple Vision Pro</h1>
+<h2 align="left">Work in Progress</h2>
+<img src="screenshots/room_view.png" alt="Room View" width="300" align="right"/>
 
 ## Overview
 
