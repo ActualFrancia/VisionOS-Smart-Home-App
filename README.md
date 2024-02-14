@@ -1,5 +1,5 @@
 # Smart Home App for Apple Vision Pro
-### Work in Progeress...
+### Work in Progress...
 
 ![Room View](screenshots/room_view.png)
 
