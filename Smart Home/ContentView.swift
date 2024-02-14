@@ -10,14 +10,35 @@ import RealityKit
 import RealityKitContent
 
 struct ContentView: View {
+    
     var body: some View {
-        VStack {
-            Model3D(named: "Scene", bundle: realityKitContentBundle)
-                .padding(.bottom, 50)
-
-            Text("Hello, world!")
+        TabView {
+            HomeView()
+                .tabItem {
+                    Image(systemName: "house.fill")
+                    Text("Smart Home")
+                }
+            FavoritesView()
+                .tabItem {
+                    Image(systemName: "star.fill")
+                    Text("Favorites")
+                }
+            RoomView()
+                .tabItem {
+                    Image(systemName: "square.split.bottomrightquarter.fill")
+                    Text("Rooms")
+                }
+            CamView()
+                .tabItem {
+                    Image(systemName: "web.camera.fill")
+                    Text("Cameras")
+                }
+            SceneView()
+                .tabItem {
+                    Image(systemName: "circle.grid.3x3.circle")
+                    Text("Scenes")
+                }
         }
-        .padding()
     }
 }
 
