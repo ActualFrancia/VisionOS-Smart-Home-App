@@ -20,6 +20,7 @@
 		9125AF6D2B7B04330026F9B9 /* SceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125AF6C2B7B04330026F9B9 /* SceneView.swift */; };
 		9125AF6F2B7B04410026F9B9 /* CamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125AF6E2B7B04410026F9B9 /* CamView.swift */; };
 		9125AF712B7B044F0026F9B9 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125AF702B7B044F0026F9B9 /* FavoritesView.swift */; };
+		9186053F2B7EA77B00A2F19A /* FavoritesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9186053E2B7EA77B00A2F19A /* FavoritesDetailView.swift */; };
 		91B7A16B2B7B0A5A003A70EF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B7A16A2B7B0A5A003A70EF /* HomeView.swift */; };
 		91B7A16D2B7B0BC3003A70EF /* RoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B7A16C2B7B0BC3003A70EF /* RoomModel.swift */; };
 		91B7A1702B7B0E1B003A70EF /* RoomData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B7A16F2B7B0E1B003A70EF /* RoomData.swift */; };
@@ -54,6 +55,7 @@
 		9125AF6C2B7B04330026F9B9 /* SceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneView.swift; sourceTree = "<group>"; };
 		9125AF6E2B7B04410026F9B9 /* CamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamView.swift; sourceTree = "<group>"; };
 		9125AF702B7B044F0026F9B9 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		9186053E2B7EA77B00A2F19A /* FavoritesDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesDetailView.swift; sourceTree = "<group>"; };
 		91B7A16A2B7B0A5A003A70EF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		91B7A16C2B7B0BC3003A70EF /* RoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomModel.swift; sourceTree = "<group>"; };
 		91B7A16F2B7B0E1B003A70EF /* RoomData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomData.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				910DC33F2B7D4A9300725731 /* CameraWidget.swift */,
 				910DC3412B7D4EC900725731 /* SingleCamView.swift */,
 				910DC3432B7D4F6C00725731 /* LiveCamView.swift */,
+				9186053E2B7EA77B00A2F19A /* FavoritesDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				91B7A16B2B7B0A5A003A70EF /* HomeView.swift in Sources */,
 				91B7A1702B7B0E1B003A70EF /* RoomData.swift in Sources */,
 				91B7A1722B7B0F58003A70EF /* RoomDetailView.swift in Sources */,
+				9186053F2B7EA77B00A2F19A /* FavoritesDetailView.swift in Sources */,
 				9125AF6B2B7B04220026F9B9 /* RoomView.swift in Sources */,
 				910DC3422B7D4EC900725731 /* SingleCamView.swift in Sources */,
 				9125AF712B7B044F0026F9B9 /* FavoritesView.swift in Sources */,

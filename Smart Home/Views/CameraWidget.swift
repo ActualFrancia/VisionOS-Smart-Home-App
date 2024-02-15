@@ -14,7 +14,7 @@ struct CameraWidget: View {
     @State private var isCamViewActive: Bool = false
     
     var body: some View {
-        NavigationLink (destination: SingleCamView(room: title, onOff: onOff)) {
+        NavigationLink (destination: SingleCamView(room: title, onOff: onOff, title: true, size: "large")) {
             VStack (alignment: .leading){
                 VStack {
                     Image(systemName: "web.camera.fill")

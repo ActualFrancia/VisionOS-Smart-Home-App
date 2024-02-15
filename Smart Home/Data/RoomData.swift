@@ -12,6 +12,8 @@ import Foundation
 let roomData: [Room] = [
     Room(name: "Family Room",
          temperature: 72.5,
+         // Favorites
+         favorites: ["Light", "Temp"],
          // Light
          hasLight: true,
          lightOn: true,
@@ -36,6 +38,8 @@ let roomData: [Room] = [
     
     Room(name: "Master Bedroom",
          temperature: 68.0,
+         // Favorites
+         favorites: [],
          // Light
          hasLight: true,
          lightOn: false,
@@ -59,6 +63,8 @@ let roomData: [Room] = [
     
     Room(name: "Kitchen",
          temperature: 71.3,
+         // Favorites
+         favorites: ["Light"],
          // Light
          hasLight: true,
          lightOn: true,
@@ -81,6 +87,8 @@ let roomData: [Room] = [
     
     Room(name: "Office", 
          temperature: 75.0,
+         // Favorites
+         favorites: ["Temp"],
          // Light
          hasLight: true,
          lightOn: true,
@@ -103,6 +111,8 @@ let roomData: [Room] = [
     
     Room(name: "Kid's Bedroom", 
          temperature: 69.2,
+         // Favorites
+         favorites: [],
          // Light
          hasLight: true,
          lightOn: false,
@@ -120,6 +130,44 @@ let roomData: [Room] = [
          hasOven: false,
          // Camera
          hasCamera: false
+        ),
+    
+    Room(name: "Front Door",
+         temperature: 82,
+         // Favorites
+         favorites: ["Camera"],
+         // Light
+         hasLight: false,
+         // Temp
+         hasTemp: false,
+         // Shade
+         hasShade: false,
+         // TV
+         hasTV: false,
+         // Oven
+         hasOven: false,
+         // Camera
+         hasCamera: true,
+         camOn: true
+        ),
+    
+    Room(name: "Backyard",
+         temperature: 82,
+         // Favorites
+         favorites: ["Camera"],
+         // Light
+         hasLight: false,
+         // Temp
+         hasTemp: false,
+         // Shade
+         hasShade: false,
+         // TV
+         hasTV: false,
+         // Oven
+         hasOven: false,
+         // Camera
+         hasCamera: true,
+         camOn: false
         )
 ]
 

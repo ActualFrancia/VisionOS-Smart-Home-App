@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct LiveCamView: View {
-    let camera: String
+    let room: String
     let size: String
     let onOff: Bool
     @State private var isLoading: Bool = true
     
     init(camera: String, size: String, onOff: Bool) {
-        self.camera = camera
+        self.room = camera
         self.size = size
         self.onOff = onOff
     }
@@ -23,19 +23,23 @@ struct LiveCamView: View {
         switch size {
         case "large":
             return (width: 500, height: 281.25, imageSize: 60)
+        case "medium":
+            return (width: 400, height: 225, imageSize: 50)
         default:
             return (width: 20, height: 20, imageSize: 20)
         }
     }
     
     func camSelect() -> Image {
-        switch camera {
+        switch room {
         case "Front Door":
             return Image("FrontdoorFootage")
         case "Kitchen":
             return Image("KitchenFootage")
         case "Family Room":
             return Image("FamilyRoomFootage")
+        case "Backyard":
+            return Image("BackyardFootage")
         default:
             return Image("")
         }
@@ -95,5 +99,5 @@ struct LiveCamView: View {
 }
 
 #Preview {
-    RoomView()
+    FavoritesView()
 }

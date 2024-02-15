@@ -11,6 +11,8 @@ struct Room: Identifiable {
     let name: String
     let id = UUID()
     var temperature: Double
+    // Favorites
+    var favorites: [String]
     // Light
     var hasLight: Bool
     var lightOn: Bool?
