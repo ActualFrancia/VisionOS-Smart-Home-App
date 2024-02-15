@@ -17,7 +17,7 @@ This repository contains a native application prototype designed for the Apple V
 
 ## Technologies Used
 
-- **Swift, SwiftUI**
+- **Xcode, VisionOS, Swift, SwiftUI**
 
 ## Contributing
 
