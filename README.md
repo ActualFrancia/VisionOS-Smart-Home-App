@@ -5,7 +5,7 @@
 
 ## Overview
 
-This repository contains a native application prototype designed for the Apple Vision Pro, showcasing the potential of a Smart Home app built on VisionOS. The project aims to demonstrate an intuitive user interface for controlling smart home devices within the Apple Vision Pro.
+This repository contains a work in progress build for a native Smart Home application prototype designed for the Apple Vision Pro, showcasing the potential of a Smart Home app built on VisionOS. The project aims to demonstrate an intuitive user interface for controlling smart home devices within the Apple Vision Pro.
 
 ## Features
 
