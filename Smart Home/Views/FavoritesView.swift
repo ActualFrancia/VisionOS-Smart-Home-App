@@ -21,10 +21,10 @@ struct FavoritesView: View {
             Text("Favorites")
                 .font(.largeTitle)
             
-            ScrollView {
-                // Temp Code for Format Testing
-                // TODO: REDO
-                HStack {
+            HStack {
+                ScrollView {
+                    // Temp Code for Format Testing
+                    // TODO: REDO
                     VStack {
                         ForEach (roomData) { room in
                             if (room.favorites.count > 0) {
@@ -32,22 +32,29 @@ struct FavoritesView: View {
                             }
                         }
                     }
-                    VStack (alignment: .leading) {
-                        ForEach (roomData) { room in
-                            if (room.favorites.count > 0) {
-                                if (room.favorites.contains("Camera")) {
-                                    Text("\(room.name)")
-                                        .font(.title)
-                                    Text("Temperature: \(room.temperature, specifier: "%.1f")º")
-                                        .font(.subheadline)
-                                    SingleCamView(room: room.name, onOff: room.camOn!, title: false, size: "medium")
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                
+                ScrollView {
+                        VStack (alignment: .leading) {
+                            ForEach (roomData) { room in
+                                if (room.favorites.count > 0) {
+                                    if (room.favorites.contains("Camera")) {
+                                        Text("\(room.name)")
+                                            .font(.title)
+                                        Text("Temperature: \(room.temperature, specifier: "%.1f")º")
+                                            .font(.subheadline)
+                                        SingleCamView(room: room.name, onOff: room.camOn!, title: false, size: "medium")
+                                    }
                                 }
                             }
+                            Spacer()
                         }
-                        Spacer()
+                        .padding()
                     }
-                    .padding()
-                }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+
+                
             }
         }
         .padding().padding()
