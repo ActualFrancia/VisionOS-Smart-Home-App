@@ -9,27 +9,20 @@ import SwiftUI
 
 struct RoomView: View {
     
-    @State private var selectedRoom: Room?
-    @State private var selectedRoomID: Room.ID?
-    
-    init() {
-        _selectedRoomID = State(initialValue: roomData.first?.id)
-    }
+    @ObservedObject private var houseData = HouseData.shared
     
     var body: some View {
         NavigationView {
-            List(roomData, id: \.id, selection: $selectedRoomID) { room in
-                NavigationLink(destination: RoomDetailView(roomID: selectedRoomID)) {
+            List(houseData.smartHome.rooms.indices, id: \.self) { index in
+                NavigationLink(destination: RoomDetailView(room: $houseData.smartHome.rooms[index])) {
                     HStack {
                         Image(systemName: "square.split.bottomrightquarter")
-                        Text(room.name)
+                        Text("\(houseData.smartHome.rooms[index].name)")
                     }
                 }
             }
             .navigationTitle("Rooms")
             .listStyle(InsetListStyle())
-            
-            RoomDetailView(roomID: selectedRoomID)
         }
     }
 }
