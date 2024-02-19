@@ -12,6 +12,10 @@ public struct WidgetUtils {
     public func getSystemImage(type: String) -> Image {
         switch type {
         // Temperature
+        case "Fan":
+            return Image(systemName: "fan.fill")
+        case "Thermostat":
+            return Image(systemName: "thermometer")
         // Lighting
         case "Ceiling Light":
             return Image(systemName: "light.cylindrical.ceiling.fill")

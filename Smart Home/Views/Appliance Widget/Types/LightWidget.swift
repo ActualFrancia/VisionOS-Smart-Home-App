@@ -10,6 +10,15 @@ import SwiftUI
 struct LightWidget: View {
     let roomName: String
     @Binding var applianceData: Room.Appliance
+    @State private var isSheetPresented = false
+    @State private var sliderValue: Double
+    
+    init(roomName: String, applianceData: Binding<Room.Appliance>) {
+        self.roomName = roomName
+        self._applianceData = applianceData
+        self._isSheetPresented = State(initialValue: false)
+        self._sliderValue = State(initialValue: applianceData.strength.wrappedValue!)
+    }
     
     // Button Color
     let buttonColor = Color.yellow.opacity(0.9)
@@ -24,7 +33,7 @@ struct LightWidget: View {
     
     var body: some View {
         Button(action: {
-            applianceData.isOn?.toggle()
+            applianceData.isOn!.toggle()
         }) {
             VStack (alignment: .leading){
                 WidgetUtils().getSystemImage(type: applianceData.type!)
@@ -55,9 +64,67 @@ struct LightWidget: View {
                  RoundedRectangle(cornerRadius: 25)
                     .fill(applianceData.isOn! ? buttonColor : Color.gray.opacity(0.3))
              )
+            .onTapGesture(count: 2, perform: {
+                isSheetPresented = true
+            })
+            .onLongPressGesture(perform: {
+                isSheetPresented = true
+            })
         }
         .buttonBorderShape(.roundedRectangle(radius: 25))
         .frame(width: 145, height: 145)
+        // Light Strength Sheet
+        .sheet(isPresented: $isSheetPresented, content: {
+            VStack {
+                HStack {
+                    WidgetUtils().getSystemImage(type: applianceData.type!)
+                    Text("\(roomName) \(applianceData.type!)")
+                        .font(.title3)
+                    Spacer()
+                    // Close Button
+                    Button(action: {
+                        isSheetPresented = false
+                    }) {
+                        Image(systemName: "xmark")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 10, height: 10)
+                            .fixedSize()
+                    }
+                    .frame(width: 20, height: 20)
+                    .clipShape(Circle())
+                }
+                
+                HStack {
+                    // Power Button
+                    Button(action: {
+                        applianceData.isOn!.toggle()
+                    }) {
+                        Image(systemName: "power")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 20, height: 20)
+                            .fixedSize()
+                    }
+                    .frame(width: 40, height: 40)
+                    .background(applianceData.isOn! ? Color.white.opacity(0.6) : Color.clear)
+                    .clipShape(Circle())
+                    Text("\(sliderValue, specifier: "%.0f")%")
+                        .fixedSize(horizontal: true, vertical: true)
+                        .frame(width: 40)
+                    Slider(value: $sliderValue, in: 0...100)
+                        .onChange(of: sliderValue) {
+                            applianceData.strength = sliderValue.rounded()
+                            if applianceData.strength?.rounded() == 0.0 {
+                                applianceData.isOn! = false
+                            } else {
+                                applianceData.isOn! = true
+                            }
+                        }
+                }
+            }
+            .padding()
+        })
     }
 }
 

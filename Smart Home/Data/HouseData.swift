@@ -13,27 +13,27 @@ class HouseData: ObservableObject {
         Room(name: "Family Room",
              temperature: 24,
              appliances: [
-                ("Temperature", Room.Appliance(type: "Thermostat", isOn: true, state: "Auto")),
+                ("Temperature", Room.Appliance(type: "Thermostat", isOn: true, strength: 23, state: "Auto")),
                 ("Light", Room.Appliance(type: "Ceiling Light", isOn: true, strength: 100)),
-                ("Temperature", Room.Appliance(type: "Fan", isOn: true, state: "Summer"))
-                ,]),
+                ("Temperature", Room.Appliance(type: "Fan", isOn: true, strength: 67, state: "Summer")),
+                ]),
         
         Room(name: "Kitchen",
              temperature: 24,
              appliances: [
-                ("Temperature", Room.Appliance(type: "Thermostat", isOn: true, state: "Auto")),
+                ("Temperature", Room.Appliance(type: "Thermostat", isOn: true, strength: 23, state: "Auto")),
                 ("Light", Room.Appliance(type: "Floor Lamp", isOn: true, strength: 100)),
-                ("Temperature", Room.Appliance(type: "Fan", isOn: true, state: "Summer")),
+                ("Temperature", Room.Appliance(type: "Fan", isOn: true, strength: 67, state: "Summer")),
                 ("Light", Room.Appliance(type: "Light Strip", isOn: true, strength: 100))
-                ,]),
+                ]),
         
         Room(name: "Office",
              temperature: 24,
              appliances: [
-                ("Temperature", Room.Appliance(type: "Thermostat", isOn: true, state: "Auto")),
+                ("Temperature", Room.Appliance(type: "Thermostat", isOn: true, strength: 23, state: "Auto")),
                 ("Light", Room.Appliance(type: "Floor Lamp", isOn: true, strength: 100)),
-                ("Temperature", Room.Appliance(type: "Fan", isOn: true, state: "Summer"))
-                ,])
+                ("Temperature", Room.Appliance(type: "Fan", isOn: true, strength: 67, state: "Summer")),
+                ])
     ])
     
     // Singleton Pattern

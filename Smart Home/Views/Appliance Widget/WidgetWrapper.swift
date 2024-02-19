@@ -11,11 +11,18 @@ struct WidgetWrapper: View {
     @Binding var room: Room
     
     var body: some View {
-        ForEach (room.appliances.indices, id: \.self) { index in
-            let applianceType = room.appliances[index].0
-            
-            if (applianceType == "Light") {
-                LightWidget(roomName: room.name, applianceData: $room.appliances[index].1)
+        HStack {
+            ForEach (room.appliances.indices, id: \.self) { index in
+                let applianceType = room.appliances[index].0
+                
+                switch applianceType {
+                case "Light":
+                    LightWidget(roomName: room.name, applianceData: $room.appliances[index].1)
+                case "Temperature":
+                    TemperatureWidget(roomName: room.name, applianceData: $room.appliances[index].1)
+                default:
+                    Text("Error")
+                }
             }
         }
     }
