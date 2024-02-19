@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RoomView: View {
+struct RoomTabView: View {
     
     @ObservedObject private var houseData = HouseData.shared
     
@@ -28,5 +28,5 @@ struct RoomView: View {
 }
 
 #Preview {
-    RoomView()
+    RoomTabView()
 }

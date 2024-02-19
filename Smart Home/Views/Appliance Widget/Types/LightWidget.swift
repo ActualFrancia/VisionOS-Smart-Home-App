@@ -129,5 +129,5 @@ struct LightWidget: View {
 }
 
 #Preview {
-    RoomView()
+    RoomTabView()
 }

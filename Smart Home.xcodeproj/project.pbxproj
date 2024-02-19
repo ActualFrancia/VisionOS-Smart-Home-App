@@ -13,11 +13,11 @@
 		91025D222B7AB55A005A6AB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91025D212B7AB55A005A6AB7 /* Assets.xcassets */; };
 		91025D252B7AB55A005A6AB7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91025D242B7AB55A005A6AB7 /* Preview Assets.xcassets */; };
 		91025D302B7AB55A005A6AB7 /* Smart_HomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91025D2F2B7AB55A005A6AB7 /* Smart_HomeTests.swift */; };
-		9125AF6B2B7B04220026F9B9 /* RoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125AF6A2B7B04220026F9B9 /* RoomView.swift */; };
-		9125AF6D2B7B04330026F9B9 /* SceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125AF6C2B7B04330026F9B9 /* SceneView.swift */; };
-		9125AF6F2B7B04410026F9B9 /* CamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125AF6E2B7B04410026F9B9 /* CamView.swift */; };
-		9125AF712B7B044F0026F9B9 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125AF702B7B044F0026F9B9 /* FavoritesView.swift */; };
-		91B7A16B2B7B0A5A003A70EF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B7A16A2B7B0A5A003A70EF /* HomeView.swift */; };
+		9125AF6B2B7B04220026F9B9 /* RoomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125AF6A2B7B04220026F9B9 /* RoomTabView.swift */; };
+		9125AF6D2B7B04330026F9B9 /* SceneTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125AF6C2B7B04330026F9B9 /* SceneTabView.swift */; };
+		9125AF6F2B7B04410026F9B9 /* CamTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125AF6E2B7B04410026F9B9 /* CamTabView.swift */; };
+		9125AF712B7B044F0026F9B9 /* FavoritesTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125AF702B7B044F0026F9B9 /* FavoritesTabView.swift */; };
+		91B7A16B2B7B0A5A003A70EF /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B7A16A2B7B0A5A003A70EF /* HomeTabView.swift */; };
 		91B7A16D2B7B0BC3003A70EF /* HouseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B7A16C2B7B0BC3003A70EF /* HouseModel.swift */; };
 		91B7A1702B7B0E1B003A70EF /* HouseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B7A16F2B7B0E1B003A70EF /* HouseData.swift */; };
 		91B7A1722B7B0F58003A70EF /* RoomDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B7A1712B7B0F58003A70EF /* RoomDetailView.swift */; };
@@ -25,7 +25,10 @@
 		91BBCD742B82A5B300032431 /* LightWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BBCD732B82A5B300032431 /* LightWidget.swift */; };
 		91BBCD772B82A5DA00032431 /* TemperatureWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BBCD762B82A5DA00032431 /* TemperatureWidget.swift */; };
 		91BBCD7A2B82B76B00032431 /* WidgetUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BBCD792B82B76B00032431 /* WidgetUtils.swift */; };
-		91D1C9092B7B1F940068AAD6 /* SmartApplianceWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D1C9082B7B1F940068AAD6 /* SmartApplianceWidget.swift */; };
+		91BF19962B83E98500D5CAB9 /* CameraWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF19952B83E98500D5CAB9 /* CameraWidget.swift */; };
+		91BF19982B83ECAA00D5CAB9 /* CamPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF19972B83ECAA00D5CAB9 /* CamPageView.swift */; };
+		91BF199B2B83F2C500D5CAB9 /* LiveCamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF199A2B83F2C500D5CAB9 /* LiveCamView.swift */; };
+		91BF199D2B83F3D500D5CAB9 /* CameraData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF199C2B83F3D500D5CAB9 /* CameraData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,11 +51,11 @@
 		91025D262B7AB55A005A6AB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91025D2B2B7AB55A005A6AB7 /* Smart HomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smart HomeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91025D2F2B7AB55A005A6AB7 /* Smart_HomeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_HomeTests.swift; sourceTree = "<group>"; };
-		9125AF6A2B7B04220026F9B9 /* RoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomView.swift; sourceTree = "<group>"; };
-		9125AF6C2B7B04330026F9B9 /* SceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneView.swift; sourceTree = "<group>"; };
-		9125AF6E2B7B04410026F9B9 /* CamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamView.swift; sourceTree = "<group>"; };
-		9125AF702B7B044F0026F9B9 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
-		91B7A16A2B7B0A5A003A70EF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		9125AF6A2B7B04220026F9B9 /* RoomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTabView.swift; sourceTree = "<group>"; };
+		9125AF6C2B7B04330026F9B9 /* SceneTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneTabView.swift; sourceTree = "<group>"; };
+		9125AF6E2B7B04410026F9B9 /* CamTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamTabView.swift; sourceTree = "<group>"; };
+		9125AF702B7B044F0026F9B9 /* FavoritesTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTabView.swift; sourceTree = "<group>"; };
+		91B7A16A2B7B0A5A003A70EF /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
 		91B7A16C2B7B0BC3003A70EF /* HouseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseModel.swift; sourceTree = "<group>"; };
 		91B7A16F2B7B0E1B003A70EF /* HouseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseData.swift; sourceTree = "<group>"; };
 		91B7A1712B7B0F58003A70EF /* RoomDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailView.swift; sourceTree = "<group>"; };
@@ -60,7 +63,10 @@
 		91BBCD732B82A5B300032431 /* LightWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightWidget.swift; sourceTree = "<group>"; };
 		91BBCD762B82A5DA00032431 /* TemperatureWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureWidget.swift; sourceTree = "<group>"; };
 		91BBCD792B82B76B00032431 /* WidgetUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetUtils.swift; sourceTree = "<group>"; };
-		91D1C9082B7B1F940068AAD6 /* SmartApplianceWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartApplianceWidget.swift; sourceTree = "<group>"; };
+		91BF19952B83E98500D5CAB9 /* CameraWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraWidget.swift; sourceTree = "<group>"; };
+		91BF19972B83ECAA00D5CAB9 /* CamPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamPageView.swift; sourceTree = "<group>"; };
+		91BF199A2B83F2C500D5CAB9 /* LiveCamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCamView.swift; sourceTree = "<group>"; };
+		91BF199C2B83F3D500D5CAB9 /* CameraData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,14 +158,14 @@
 		91025D3A2B7ABA17005A6AB7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				91BF19992B83F2B000D5CAB9 /* Camera */,
 				91BBCD6F2B829B1100032431 /* Appliance Widget */,
-				9125AF6A2B7B04220026F9B9 /* RoomView.swift */,
-				9125AF6C2B7B04330026F9B9 /* SceneView.swift */,
-				9125AF6E2B7B04410026F9B9 /* CamView.swift */,
-				9125AF702B7B044F0026F9B9 /* FavoritesView.swift */,
-				91B7A16A2B7B0A5A003A70EF /* HomeView.swift */,
+				9125AF6A2B7B04220026F9B9 /* RoomTabView.swift */,
+				9125AF6C2B7B04330026F9B9 /* SceneTabView.swift */,
+				9125AF6E2B7B04410026F9B9 /* CamTabView.swift */,
+				9125AF702B7B044F0026F9B9 /* FavoritesTabView.swift */,
+				91B7A16A2B7B0A5A003A70EF /* HomeTabView.swift */,
 				91B7A1712B7B0F58003A70EF /* RoomDetailView.swift */,
-				91D1C9082B7B1F940068AAD6 /* SmartApplianceWidget.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				91B7A16F2B7B0E1B003A70EF /* HouseData.swift */,
+				91BF199C2B83F3D500D5CAB9 /* CameraData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -194,6 +201,7 @@
 			children = (
 				91BBCD732B82A5B300032431 /* LightWidget.swift */,
 				91BBCD762B82A5DA00032431 /* TemperatureWidget.swift */,
+				91BF19952B83E98500D5CAB9 /* CameraWidget.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -204,6 +212,15 @@
 				91BBCD792B82B76B00032431 /* WidgetUtils.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		91BF19992B83F2B000D5CAB9 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				91BF19972B83ECAA00D5CAB9 /* CamPageView.swift */,
+				91BF199A2B83F2C500D5CAB9 /* LiveCamView.swift */,
+			);
+			path = Camera;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,21 +326,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91BF199D2B83F3D500D5CAB9 /* CameraData.swift in Sources */,
 				91B7A16D2B7B0BC3003A70EF /* HouseModel.swift in Sources */,
-				9125AF6F2B7B04410026F9B9 /* CamView.swift in Sources */,
-				91B7A16B2B7B0A5A003A70EF /* HomeView.swift in Sources */,
+				9125AF6F2B7B04410026F9B9 /* CamTabView.swift in Sources */,
+				91B7A16B2B7B0A5A003A70EF /* HomeTabView.swift in Sources */,
 				91BBCD7A2B82B76B00032431 /* WidgetUtils.swift in Sources */,
 				91B7A1702B7B0E1B003A70EF /* HouseData.swift in Sources */,
+				91BF19982B83ECAA00D5CAB9 /* CamPageView.swift in Sources */,
 				91B7A1722B7B0F58003A70EF /* RoomDetailView.swift in Sources */,
-				9125AF6B2B7B04220026F9B9 /* RoomView.swift in Sources */,
-				9125AF712B7B044F0026F9B9 /* FavoritesView.swift in Sources */,
+				9125AF6B2B7B04220026F9B9 /* RoomTabView.swift in Sources */,
+				9125AF712B7B044F0026F9B9 /* FavoritesTabView.swift in Sources */,
 				91025D202B7AB558005A6AB7 /* ContentView.swift in Sources */,
 				91025D1E2B7AB558005A6AB7 /* Smart_HomeApp.swift in Sources */,
-				91D1C9092B7B1F940068AAD6 /* SmartApplianceWidget.swift in Sources */,
+				91BF19962B83E98500D5CAB9 /* CameraWidget.swift in Sources */,
 				91BBCD772B82A5DA00032431 /* TemperatureWidget.swift in Sources */,
 				91BBCD712B829B4800032431 /* WidgetWrapper.swift in Sources */,
+				91BF199B2B83F2C500D5CAB9 /* LiveCamView.swift in Sources */,
 				91BBCD742B82A5B300032431 /* LightWidget.swift in Sources */,
-				9125AF6D2B7B04330026F9B9 /* SceneView.swift in Sources */,
+				9125AF6D2B7B04330026F9B9 /* SceneTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

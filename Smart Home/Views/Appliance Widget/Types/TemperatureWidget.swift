@@ -28,6 +28,8 @@ struct TemperatureWidget: View {
             switch applianceData.type {
             case "Thermostat":
                 return "\(applianceData.state!) • \(Int(applianceData.strength!))º"
+            case "Standing Fan":
+                fallthrough
             case "Fan":
                 return "\(applianceData.state!) • \(Int(applianceData.strength!))%"
             default:
@@ -146,20 +148,29 @@ struct TemperatureWidget: View {
             }
         )
         default: AnyView (
-            // Power Button
-            Button(action: {
-                applianceData.isOn!.toggle()
-            }) {
-                Image(systemName: "power")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 20, height: 20)
-                    .fixedSize()
+            HStack {
+                // Power Button
+                Button(action: {
+                    applianceData.isOn!.toggle()
+                }) {
+                    Image(systemName: "power")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 20, height: 20)
+                        .fixedSize()
+                }
+                .frame(width: 40, height: 40)
+                .background(applianceData.isOn! ? Color.white.opacity(0.6) : Color.clear)
+                .clipShape(Circle())
+                // Slider
+                HStack {
+                    Text("\(sliderValue, specifier: "%.0f")%")
+                        .fixedSize(horizontal: true, vertical: true)
+                        .frame(width: 40)
+                    Slider(value: $sliderValue, in: 0...100)
+                }
             }
-            .frame(width: 40, height: 40)
-            .background(applianceData.isOn! ? Color.white.opacity(0.6) : Color.clear)
-            .clipShape(Circle())
-            )
+        )
         }
     }
     
@@ -243,5 +254,5 @@ struct TemperatureWidget: View {
 }
 
 #Preview {
-    RoomView()
+    RoomTabView()
 }

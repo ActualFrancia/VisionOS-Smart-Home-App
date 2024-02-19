@@ -1,5 +1,5 @@
 //
-//  FavoritesView.swift
+//  HomeView.swift
 //  Smart Home
 //
 //  Created by Kali Francia on 2/12/24.
@@ -7,13 +7,12 @@
 
 import SwiftUI
 
-struct FavoritesView: View {
-
+struct HomeTabView: View {
     var body: some View {
-        Text("Favorites View")
+        Text("Home View!")
     }
 }
 
 #Preview {
-    FavoritesView()
+    HomeTabView()
 }

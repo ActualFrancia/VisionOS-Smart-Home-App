@@ -13,27 +13,27 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
-            HomeView()
+            HomeTabView()
                 .tabItem {
                     Image(systemName: "house.fill")
                     Text("Smart Home")
                 }
-            FavoritesView()
+            FavoritesTabView()
                 .tabItem {
                     Image(systemName: "star.fill")
                     Text("Favorites")
                 }
-            RoomView()
+            RoomTabView()
                 .tabItem {
                     Image(systemName: "square.split.bottomrightquarter.fill")
                     Text("Rooms")
                 }
-            CamView()
+            CamTabView()
                 .tabItem {
                     Image(systemName: "web.camera.fill")
                     Text("Cameras")
                 }
-            SceneView()
+            SceneTabView()
                 .tabItem {
                     Image(systemName: "circle.grid.3x3.circle")
                     Text("Scenes")

@@ -7,7 +7,7 @@
 
 import Foundation
 
-// Demo House data for Demo purposes.
+// Demo SmartHome data for Demo purposes.
 class HouseData: ObservableObject {
     @Published var smartHome = House(rooms: [
         Room(name: "Family Room",
@@ -33,6 +33,26 @@ class HouseData: ObservableObject {
                 ("Temperature", Room.Appliance(type: "Thermostat", isOn: true, strength: 23, state: "Auto")),
                 ("Light", Room.Appliance(type: "Floor Lamp", isOn: true, strength: 100)),
                 ("Temperature", Room.Appliance(type: "Fan", isOn: true, strength: 67, state: "Summer")),
+                ]),
+        
+        Room(name: "Kid's Bedroom",
+             temperature: 24,
+             appliances: [
+                ("Light", Room.Appliance(type: "Floor Lamp", isOn: true, strength: 100)),
+                ("Temperature", Room.Appliance(type: "Standing Fan", isOn: false, strength: 33, state: "Summer")),
+                ]),
+        
+        Room(name: "Front Door",
+             temperature: 21,
+             appliances: [
+                ("Camera", Room.Appliance()),
+                ]),
+        
+        Room(name: "Garden",
+             temperature: 20,
+             appliances: [
+                ("Camera", Room.Appliance()),
+                ("Light", Room.Appliance(type: "Light Strip", isOn: true, strength: 100)),
                 ])
     ])
     

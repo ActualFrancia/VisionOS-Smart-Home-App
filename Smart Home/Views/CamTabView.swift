@@ -1,5 +1,5 @@
 //
-//  HomeView.swift
+//  CamView.swift
 //  Smart Home
 //
 //  Created by Kali Francia on 2/12/24.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct HomeView: View {
+struct CamTabView: View {
     var body: some View {
-        Text("Home View!")
+        Text("Cam View")
     }
 }
 
 #Preview {
-    HomeView()
+    CamTabView()
 }

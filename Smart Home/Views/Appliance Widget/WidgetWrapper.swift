@@ -16,6 +16,8 @@ struct WidgetWrapper: View {
                 let applianceType = room.appliances[index].0
                 
                 switch applianceType {
+                case "Camera":
+                    CameraWidget(roomName: room.name, applianceData: $room.appliances[index].1)
                 case "Light":
                     LightWidget(roomName: room.name, applianceData: $room.appliances[index].1)
                 case "Temperature":
@@ -29,5 +31,5 @@ struct WidgetWrapper: View {
 }
 
 #Preview {
-    RoomView()
+    RoomTabView()
 }

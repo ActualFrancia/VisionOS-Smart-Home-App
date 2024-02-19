@@ -29,5 +29,5 @@ struct RoomDetailView: View {
 }
 
 #Preview {
-    RoomView()
+    RoomTabView()
 }
