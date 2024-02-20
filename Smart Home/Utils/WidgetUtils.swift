@@ -64,7 +64,7 @@ public struct WidgetUtils {
             Image(systemName: "power")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 25, height: 25)
+                .frame(width: 23, height: 23)
                 .fixedSize()
         }
         .frame(width: 40, height: 40)

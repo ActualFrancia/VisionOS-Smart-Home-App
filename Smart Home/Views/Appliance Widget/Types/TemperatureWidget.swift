@@ -96,6 +96,13 @@ struct TemperatureWidget: View {
         case "Fan": AnyView (
             VStack {
                 HStack {
+                    // Power Button
+                    WidgetUtils().powerButton(onOff: applianceData.isOn!, action: {
+                        applianceData.isOn!.toggle()
+                    })
+                    .padding(.trailing, 20)
+
+                    Spacer()
                     // Summer
                     Button(action: {
                         applianceData.state = "Summer"
