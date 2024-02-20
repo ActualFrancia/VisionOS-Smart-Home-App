@@ -45,7 +45,9 @@ struct LightWidget: View {
                         .fixedSize()
                     
                     Spacer()
-                    WidgetUtils().showFavorite(fav: applianceData.favorite)
+                    WidgetUtils().showFavorite(fav: applianceData.favorite, action: {
+                        applianceData.favorite.toggle()
+                    })
                 }
                 
                 Spacer()

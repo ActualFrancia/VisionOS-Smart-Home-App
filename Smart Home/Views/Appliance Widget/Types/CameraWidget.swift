@@ -17,12 +17,19 @@ struct CameraWidget: View {
     var body: some View {
         NavigationLink (destination: CamPageView(roomName: roomName, applianceData: $applianceData)) {
             VStack (alignment: .leading){
-                WidgetUtils().getSystemImage(type: "Camera")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .foregroundColor(WidgetUtils().getColor(type: "Camera", onOff: true))
-                    .frame(height: 50)
-                    .fixedSize()
+                HStack (alignment: .top) {
+                    WidgetUtils().getSystemImage(type: "Camera")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .foregroundColor(WidgetUtils().getColor(type: "Camera", onOff: true))
+                        .frame(height: 50)
+                        .fixedSize()
+                    
+                    Spacer()
+                    WidgetUtils().showFavorite(fav: applianceData.favorite, action: {
+                        applianceData.favorite.toggle()
+                    })
+                }
                 
                 Spacer()
                 

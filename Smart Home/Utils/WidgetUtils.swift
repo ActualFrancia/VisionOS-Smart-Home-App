@@ -46,14 +46,21 @@ public struct WidgetUtils {
         }
     }
     
-    func showFavorite(fav: Bool) -> some View {
+    func showFavorite(fav: Bool, action: @escaping () -> Void) -> some View {
         return (
-            Image(systemName: fav ? "heart.fill" : "")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 20, height: 20)
-                .opacity(0.8)
-                .fixedSize()
+            Button (action: {
+                action()
+            }) {
+                Image(systemName: fav ? "heart.fill" : "heart")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 20, height: 20)
+                    .opacity(fav ? 0.8 : 0.2)
+                    .fixedSize()
+            }
+                .frame(width: 30, height: 30)
+                .buttonStyle(.borderless)
+                .clipShape(Circle())
         )
     }
     
