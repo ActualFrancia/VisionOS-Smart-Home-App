@@ -18,12 +18,8 @@ struct CameraWidget: View {
         NavigationLink (destination: CamPageView(roomName: roomName, applianceData: $applianceData)) {
             VStack (alignment: .leading){
                 HStack (alignment: .top) {
-                    WidgetUtils().getSystemImage(type: "Camera")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .foregroundColor(WidgetUtils().getColor(type: "Camera", onOff: true))
-                        .frame(height: 50)
-                        .fixedSize()
+                    WidgetUtils().getSystemImage(type: "Camera", isOn: true)
+
                     
                     Spacer()
                     WidgetUtils().showFavorite(fav: applianceData.favorite, action: {
@@ -38,11 +34,11 @@ struct CameraWidget: View {
                         Text("\(roomName)")
                             .font(.subheadline)
                             .fontWeight(.bold)
-                            .foregroundStyle(WidgetUtils().getColor(type: "Text", onOff: true))
+                            .foregroundStyle(WidgetUtils().getColor(type: "Text", isOn: true))
                         Text("Camera")
                             .font(.subheadline)
                             .fontWeight(.bold)
-                            .foregroundStyle(WidgetUtils().getColor(type: "Text", onOff: true))
+                            .foregroundStyle(WidgetUtils().getColor(type: "Text", isOn: true))
                     }
                     Spacer()
                     Image(systemName: "chevron.right")

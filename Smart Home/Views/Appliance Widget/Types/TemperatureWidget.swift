@@ -1,5 +1,5 @@
 //
-//  LightWidget.swift
+//  TemperatureWidget.swift
 //  Smart Home
 //
 //  Created by Kali Francia on 2/18/24.
@@ -23,6 +23,7 @@ struct TemperatureWidget: View {
     // Button Color
     let buttonColor = Color.blue.opacity(0.9)
     
+    // Widget Subtitle
     private func getSubtitle() -> String {
         if applianceData.isOn! {
             switch applianceData.type {
@@ -154,12 +155,7 @@ struct TemperatureWidget: View {
         }) {
             VStack (alignment: .leading){
                 HStack (alignment: .top) {
-                    WidgetUtils().getSystemImage(type: applianceData.type!)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .foregroundColor(WidgetUtils().getColor(type: "Image", onOff: applianceData.isOn!))
-                        .frame(height: 50)
-                        .fixedSize()
+                    WidgetUtils().getSystemImage(type: applianceData.type!, isOn: applianceData.isOn!)
                     
                     Spacer()
                     WidgetUtils().showFavorite(fav: applianceData.favorite, action: {
@@ -174,10 +170,10 @@ struct TemperatureWidget: View {
                         Text("\(roomName) \(applianceData.type!)")
                             .font(.subheadline)
                             .fontWeight(.bold)
-                            .foregroundStyle(WidgetUtils().getColor(type: "Text", onOff: applianceData.isOn!))
+                            .foregroundStyle(WidgetUtils().getColor(type: "Text", isOn: applianceData.isOn!))
                         Text(getSubtitle())
                             .font(.caption)
-                            .foregroundStyle(WidgetUtils().getColor(type: "Text", onOff: applianceData.isOn!))
+                            .foregroundStyle(WidgetUtils().getColor(type: "Text", isOn: applianceData.isOn!))
                     }
                     Spacer()
                 }
@@ -197,7 +193,7 @@ struct TemperatureWidget: View {
         }
         .buttonBorderShape(.roundedRectangle(radius: 25))
         .frame(width: 145, height: 145)
-        // Light Strength Sheet
+        // Temperature Sheet
         .sheet(isPresented: $isSheetPresented, content: {
             VStack {
                 WidgetUtils().sheetTitle(roomName: roomName, applianceData: $applianceData, sheetToggle: $isSheetPresented)

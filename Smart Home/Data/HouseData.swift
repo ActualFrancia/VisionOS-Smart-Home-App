@@ -16,6 +16,7 @@ class HouseData: ObservableObject {
                 ("Temperature", Room.Appliance(favorite: true, type: "Thermostat", isOn: true, strength: 23, state: "Auto")),
                 ("Light", Room.Appliance(favorite: true, type: "Ceiling Light", isOn: true, strength: 100)),
                 ("Temperature", Room.Appliance(favorite: false, type: "Fan", isOn: true, strength: 67, state: "Summer")),
+                ("Health", Room.Appliance(favorite: true, type:"Air Quality Monitor", isOn: true, airQualityIndex: 25, particulateMatter: 13.4, humidity: 11)),
                 ]),
         
         Room(name: "Kitchen",
@@ -24,7 +25,7 @@ class HouseData: ObservableObject {
                 ("Temperature", Room.Appliance(favorite: true, type: "Thermostat", isOn: true, strength: 23, state: "Auto")),
                 ("Light", Room.Appliance(favorite: false, type: "Floor Lamp", isOn: true, strength: 100)),
                 ("Temperature", Room.Appliance(favorite: false, type: "Fan", isOn: true, strength: 67, state: "Summer")),
-                ("Light", Room.Appliance(favorite: true, type: "Light Strip", isOn: true, strength: 100))
+                ("Light", Room.Appliance(favorite: true, type: "Light Strip", isOn: true, strength: 100)),
                 ]),
         
         Room(name: "Office",
@@ -33,6 +34,7 @@ class HouseData: ObservableObject {
                 ("Temperature", Room.Appliance(favorite: false, type: "Thermostat", isOn: true, strength: 23, state: "Auto")),
                 ("Light", Room.Appliance(favorite: true, type: "Floor Lamp", isOn: true, strength: 100)),
                 ("Temperature", Room.Appliance(favorite: true, type: "Fan", isOn: true, strength: 67, state: "Summer")),
+                ("Health", Room.Appliance(favorite: true, type:"Dehumidifier", isOn: true, humidity: 7, waterLevel: 39)),
                 ]),
         
         Room(name: "Kid's Bedroom",

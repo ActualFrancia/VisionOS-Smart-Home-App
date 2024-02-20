@@ -1,31 +1,64 @@
 //
-//  LightWidget.swift
+//  HealthWidget.swift
 //  Smart Home
 //
-//  Created by Kali Francia on 2/18/24.
+//  Created by Kali Francia on 2/20/24.
 //
 
 import SwiftUI
 
-struct LightWidget: View {
+struct HealthWidget: View {
     let roomName: String
     @Binding var applianceData: Room.Appliance
     @State private var isSheetPresented = false
-    @State private var sliderValue: Double
-    
-    init(roomName: String, applianceData: Binding<Room.Appliance>) {
-        self.roomName = roomName
-        self._applianceData = applianceData
-        self._isSheetPresented = State(initialValue: false)
-        self._sliderValue = State(initialValue: applianceData.strength.wrappedValue!)
-    }
     
     // Button Color
-    let buttonColor = Color.yellow.opacity(0.9)
+    let buttonColor = Color.green.opacity(0.9)
     
+    // Sheet Details
+    private func sheetDetails() -> some View {
+        HStack (alignment: .top) {
+            WidgetUtils().powerButton(onOff: applianceData.isOn!, action: {
+                applianceData.isOn!.toggle()
+            })
+            .padding(.trailing, 10)
+            
+            VStack{
+                switch applianceData.type {
+                case "Air Quality Monitor":
+                    HStack {
+                        WidgetUtils().getSheetImage(type: "AQI")
+                        Text("Air Quality:")
+                            .fontWeight(.medium)
+                        Spacer()
+                        Text("\(applianceData.airQualityIndex!, specifier: "%.0f") • \(WidgetUtils().aqiString(aqi: applianceData.airQualityIndex!))")
+                    }
+                    HStack {
+                        WidgetUtils().getSheetImage(type: "PM")
+                        Text("Particulate Matter:")
+                        Spacer()
+                        Text("\(applianceData.particulateMatter!, specifier: "%.0f") μg/m³ • \(WidgetUtils().pmString(pm: applianceData.particulateMatter!))")
+                    }
+                case "Dehumidifier":
+                    Text("TODO")
+                default:
+                    Text("ERROR")
+                }
+            }
+        }
+    }
+    
+    // Widget Subtitle
     private func getSubtitle() -> String {
         if applianceData.isOn! {
-            return "On • \(Int(applianceData.strength!))%"
+            switch applianceData.type {
+            case "Air Quality Monitor":
+                return "Air Quality • \(WidgetUtils().aqiString(aqi: applianceData.airQualityIndex!))"
+            case "Dehumidifier":
+                return "Humidity • \(applianceData.humidity!)%"
+            default:
+                return "On"
+            }
         } else {
             return "Off"
         }
@@ -75,32 +108,12 @@ struct LightWidget: View {
         }
         .buttonBorderShape(.roundedRectangle(radius: 25))
         .frame(width: 145, height: 145)
-        // Light Strength Sheet
+        // Health Sheet
         .sheet(isPresented: $isSheetPresented, content: {
             VStack {
                 WidgetUtils().sheetTitle(roomName: roomName, applianceData: $applianceData, sheetToggle: $isSheetPresented)
                 
-                HStack {
-                    WidgetUtils().powerButton(onOff: applianceData.isOn!, action: {
-                        applianceData.isOn!.toggle()
-                    })
-                    .padding(.trailing, 20)
-                    
-                    Spacer()
-                    
-                    Text("\(sliderValue, specifier: "%.0f")%")
-                        .fixedSize(horizontal: true, vertical: true)
-                        .frame(width: 40)
-                    Slider(value: $sliderValue, in: 0...100)
-                        .onChange(of: sliderValue) {
-                            applianceData.strength = sliderValue.rounded()
-                            if applianceData.strength?.rounded() == 0.0 {
-                                applianceData.isOn! = false
-                            } else {
-                                applianceData.isOn! = true
-                            }
-                        }
-                }
+                sheetDetails()
             }
             .padding()
         })

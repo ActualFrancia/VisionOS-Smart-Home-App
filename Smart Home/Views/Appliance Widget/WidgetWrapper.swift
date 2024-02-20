@@ -22,6 +22,8 @@ struct WidgetWrapper: View {
                     LightWidget(roomName: room.name, applianceData: $room.appliances[index].1)
                 case "Temperature":
                     TemperatureWidget(roomName: room.name, applianceData: $room.appliances[index].1)
+                case "Health":
+                    HealthWidget(roomName: room.name, applianceData: $room.appliances[index].1)
                 default:
                     Text("Error")
                 }

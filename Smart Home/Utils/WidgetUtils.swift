@@ -9,40 +9,71 @@ import Foundation
 import SwiftUI
 
 public struct WidgetUtils {
-    public func getSystemImage(type: String) -> Image {
+    public func getSystemImage(type: String, isOn: Bool) -> some View {
+        var systemImage: String
+        
         switch type {
         // Camera
         case "Camera":
-            return Image(systemName: "web.camera.fill")
+            systemImage = "web.camera.fill"
         // Temperature
         case "Fan":
-            return Image(systemName: "fan.fill")
+            systemImage = "fan.fill"
         case "Standing Fan":
-            return Image(systemName: "fan.floor")
+            systemImage = "fan.floor"
         case "Thermostat":
-            return Image(systemName: "thermometer")
+            systemImage =  "thermometer"
         // Lighting
         case "Ceiling Light":
-            return Image(systemName: "light.cylindrical.ceiling.fill")
+            systemImage = "light.cylindrical.ceiling.fill"
         case "Floor Lamp":
-            return Image(systemName: "lamp.floor.fill")
+            systemImage = "lamp.floor.fill"
         case "Light Strip":
-            return Image(systemName: "light.strip.2.fill")
+            systemImage = "light.strip.2.fill"
+        // Health
+        case "Dehumidifier":
+            systemImage = "dehumidifier.fill"
+        case "Air Quality Monitor":
+            systemImage = "air.purifier.fill"
         default:
-            return Image(systemName: "circle.dotted")
+            systemImage = "circle.dotted"
         }
+        
+        return Image(systemName: systemImage)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .foregroundColor(WidgetUtils().getColor(type: "Image", isOn: isOn))
+            .frame(height: 50)
+            .fixedSize()
     }
     
-    public func getColor(type: String, onOff: Bool) -> Color {        
+    public func getSheetImage(type: String) -> some View {
+        var systemImage: String
+        
+        switch type {
+        case "AQI":
+            systemImage = "aqi.medium"
+        default:
+            systemImage = ""
+        }
+        
+        return Image(systemName: systemImage)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 20, height: 20)
+            .fixedSize()
+    }
+    
+    public func getColor(type: String, isOn: Bool) -> Color {
         switch type {
         case "Camera":
-            return onOff ? Color.blue.opacity(0.8) : Color.black.opacity(0.5)
+            return isOn ? Color.blue.opacity(0.8) : Color.black.opacity(0.5)
         case "Image":
-            return onOff ? Color.white.opacity(0.9) : Color.black.opacity(0.5)
+            return isOn ? Color.white.opacity(0.9) : Color.black.opacity(0.5)
         case "Text":
             fallthrough
         default:
-            return onOff ? Color.black.opacity(0.7) : Color.white.opacity(0.8)
+            return isOn ? Color.black.opacity(0.7) : Color.white.opacity(0.8)
         }
     }
     
@@ -133,6 +164,33 @@ public struct WidgetUtils {
             WidgetUtils().closeButton(action: {
                 sheetToggle.wrappedValue.toggle()
             })
+        }
+    }
+    
+    // AQI Int to String
+    func aqiString(aqi: Double) -> String {
+        switch aqi {
+        case 0...50:
+            return "Good"
+        case 50...100:
+            return "Moderate"
+        case 100...200:
+            return "Unhealthy"
+        default:
+            return "Hazardous"
+        }
+    }
+    
+    func pmString(pm: Double) -> String {
+        switch pm {
+        case 0...12:
+            return "Good"
+        case 12...35.4:
+            return "Moderate"
+        case 35.4...150.4:
+            return "Unhealthy"
+        default:
+            return "Hazardous"
         }
     }
 }

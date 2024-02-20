@@ -16,11 +16,18 @@ struct Room: Identifiable {
     
     // Appliance
     struct Appliance {
+        // Basics
         var favorite: Bool
         var type: String?
         var isOn: Bool?
         var strength: Double?
         var state: String?
+        // Air Quality
+        var airQualityIndex: Double?
+        var particulateMatter: Double?
+        var humidity: Int?
+        // Humidity
+        var waterLevel: Int?
     }
 }
 

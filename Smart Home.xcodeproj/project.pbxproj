@@ -13,6 +13,7 @@
 		91025D222B7AB55A005A6AB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91025D212B7AB55A005A6AB7 /* Assets.xcassets */; };
 		91025D252B7AB55A005A6AB7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91025D242B7AB55A005A6AB7 /* Preview Assets.xcassets */; };
 		91025D302B7AB55A005A6AB7 /* Smart_HomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91025D2F2B7AB55A005A6AB7 /* Smart_HomeTests.swift */; };
+		9118DDFF2B8546F800FC77C8 /* HealthWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9118DDFE2B8546F800FC77C8 /* HealthWidget.swift */; };
 		9125AF6B2B7B04220026F9B9 /* RoomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125AF6A2B7B04220026F9B9 /* RoomTabView.swift */; };
 		9125AF6D2B7B04330026F9B9 /* SceneTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125AF6C2B7B04330026F9B9 /* SceneTabView.swift */; };
 		9125AF6F2B7B04410026F9B9 /* CamTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125AF6E2B7B04410026F9B9 /* CamTabView.swift */; };
@@ -51,6 +52,7 @@
 		91025D262B7AB55A005A6AB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91025D2B2B7AB55A005A6AB7 /* Smart HomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smart HomeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91025D2F2B7AB55A005A6AB7 /* Smart_HomeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_HomeTests.swift; sourceTree = "<group>"; };
+		9118DDFE2B8546F800FC77C8 /* HealthWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthWidget.swift; sourceTree = "<group>"; };
 		9125AF6A2B7B04220026F9B9 /* RoomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTabView.swift; sourceTree = "<group>"; };
 		9125AF6C2B7B04330026F9B9 /* SceneTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneTabView.swift; sourceTree = "<group>"; };
 		9125AF6E2B7B04410026F9B9 /* CamTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamTabView.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				91BBCD732B82A5B300032431 /* LightWidget.swift */,
 				91BBCD762B82A5DA00032431 /* TemperatureWidget.swift */,
 				91BF19952B83E98500D5CAB9 /* CameraWidget.swift */,
+				9118DDFE2B8546F800FC77C8 /* HealthWidget.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				91025D202B7AB558005A6AB7 /* ContentView.swift in Sources */,
 				91025D1E2B7AB558005A6AB7 /* Smart_HomeApp.swift in Sources */,
 				91BF19962B83E98500D5CAB9 /* CameraWidget.swift in Sources */,
+				9118DDFF2B8546F800FC77C8 /* HealthWidget.swift in Sources */,
 				91BBCD772B82A5DA00032431 /* TemperatureWidget.swift in Sources */,
 				91BBCD712B829B4800032431 /* WidgetWrapper.swift in Sources */,
 				91BF199B2B83F2C500D5CAB9 /* LiveCamView.swift in Sources */,
