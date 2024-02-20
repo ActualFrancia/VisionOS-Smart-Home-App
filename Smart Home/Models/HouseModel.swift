@@ -16,6 +16,7 @@ struct Room: Identifiable {
     
     // Appliance
     struct Appliance {
+        var favorite: Bool
         var type: String?
         var isOn: Bool?
         var strength: Double?

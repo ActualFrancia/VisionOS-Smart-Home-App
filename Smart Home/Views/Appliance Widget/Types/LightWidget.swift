@@ -36,12 +36,17 @@ struct LightWidget: View {
             applianceData.isOn!.toggle()
         }) {
             VStack (alignment: .leading){
-                WidgetUtils().getSystemImage(type: applianceData.type!)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .foregroundColor(WidgetUtils().getColor(type: "Image", onOff: applianceData.isOn!))
-                    .frame(height: 50)
-                    .fixedSize()
+                HStack (alignment: .top) {
+                    WidgetUtils().getSystemImage(type: applianceData.type!)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .foregroundColor(WidgetUtils().getColor(type: "Image", onOff: applianceData.isOn!))
+                        .frame(height: 50)
+                        .fixedSize()
+                    
+                    Spacer()
+                    WidgetUtils().showFavorite(fav: applianceData.favorite)
+                }
                 
                 Spacer()
                 
@@ -76,39 +81,16 @@ struct LightWidget: View {
         // Light Strength Sheet
         .sheet(isPresented: $isSheetPresented, content: {
             VStack {
-                HStack {
-                    WidgetUtils().getSystemImage(type: applianceData.type!)
-                    Text("\(roomName) \(applianceData.type!)")
-                        .font(.title3)
-                    Spacer()
-                    // Close Button
-                    Button(action: {
-                        isSheetPresented = false
-                    }) {
-                        Image(systemName: "xmark")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 10, height: 10)
-                            .fixedSize()
-                    }
-                    .frame(width: 20, height: 20)
-                    .clipShape(Circle())
-                }
+                WidgetUtils().sheetTitle(roomName: roomName, applianceData: $applianceData, sheetToggle: $isSheetPresented)
                 
                 HStack {
-                    // Power Button
-                    Button(action: {
+                    WidgetUtils().powerButton(onOff: applianceData.isOn!, action: {
                         applianceData.isOn!.toggle()
-                    }) {
-                        Image(systemName: "power")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
-                            .fixedSize()
-                    }
-                    .frame(width: 40, height: 40)
-                    .background(applianceData.isOn! ? Color.white.opacity(0.6) : Color.clear)
-                    .clipShape(Circle())
+                    })
+                    .padding(.trailing, 20)
+                    
+                    Spacer()
+                    
                     Text("\(sliderValue, specifier: "%.0f")%")
                         .fixedSize(horizontal: true, vertical: true)
                         .frame(width: 40)

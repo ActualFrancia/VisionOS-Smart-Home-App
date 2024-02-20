@@ -13,46 +13,46 @@ class HouseData: ObservableObject {
         Room(name: "Family Room",
              temperature: 24,
              appliances: [
-                ("Temperature", Room.Appliance(type: "Thermostat", isOn: true, strength: 23, state: "Auto")),
-                ("Light", Room.Appliance(type: "Ceiling Light", isOn: true, strength: 100)),
-                ("Temperature", Room.Appliance(type: "Fan", isOn: true, strength: 67, state: "Summer")),
+                ("Temperature", Room.Appliance(favorite: true, type: "Thermostat", isOn: true, strength: 23, state: "Auto")),
+                ("Light", Room.Appliance(favorite: true, type: "Ceiling Light", isOn: true, strength: 100)),
+                ("Temperature", Room.Appliance(favorite: false, type: "Fan", isOn: true, strength: 67, state: "Summer")),
                 ]),
         
         Room(name: "Kitchen",
              temperature: 24,
              appliances: [
-                ("Temperature", Room.Appliance(type: "Thermostat", isOn: true, strength: 23, state: "Auto")),
-                ("Light", Room.Appliance(type: "Floor Lamp", isOn: true, strength: 100)),
-                ("Temperature", Room.Appliance(type: "Fan", isOn: true, strength: 67, state: "Summer")),
-                ("Light", Room.Appliance(type: "Light Strip", isOn: true, strength: 100))
+                ("Temperature", Room.Appliance(favorite: true, type: "Thermostat", isOn: true, strength: 23, state: "Auto")),
+                ("Light", Room.Appliance(favorite: false, type: "Floor Lamp", isOn: true, strength: 100)),
+                ("Temperature", Room.Appliance(favorite: false, type: "Fan", isOn: true, strength: 67, state: "Summer")),
+                ("Light", Room.Appliance(favorite: true, type: "Light Strip", isOn: true, strength: 100))
                 ]),
         
         Room(name: "Office",
              temperature: 24,
              appliances: [
-                ("Temperature", Room.Appliance(type: "Thermostat", isOn: true, strength: 23, state: "Auto")),
-                ("Light", Room.Appliance(type: "Floor Lamp", isOn: true, strength: 100)),
-                ("Temperature", Room.Appliance(type: "Fan", isOn: true, strength: 67, state: "Summer")),
+                ("Temperature", Room.Appliance(favorite: false, type: "Thermostat", isOn: true, strength: 23, state: "Auto")),
+                ("Light", Room.Appliance(favorite: true, type: "Floor Lamp", isOn: true, strength: 100)),
+                ("Temperature", Room.Appliance(favorite: true, type: "Fan", isOn: true, strength: 67, state: "Summer")),
                 ]),
         
         Room(name: "Kid's Bedroom",
              temperature: 24,
              appliances: [
-                ("Light", Room.Appliance(type: "Floor Lamp", isOn: true, strength: 100)),
-                ("Temperature", Room.Appliance(type: "Standing Fan", isOn: false, strength: 33, state: "Summer")),
+                ("Light", Room.Appliance(favorite: false, type: "Floor Lamp", isOn: true, strength: 100)),
+                ("Temperature", Room.Appliance(favorite: false, type: "Standing Fan", isOn: false, strength: 33, state: "Summer")),
                 ]),
         
         Room(name: "Front Door",
              temperature: 21,
              appliances: [
-                ("Camera", Room.Appliance()),
+                ("Camera", Room.Appliance(favorite: true)),
                 ]),
         
         Room(name: "Garden",
              temperature: 20,
              appliances: [
-                ("Camera", Room.Appliance()),
-                ("Light", Room.Appliance(type: "Light Strip", isOn: true, strength: 100)),
+                ("Camera", Room.Appliance(favorite: true)),
+                ("Light", Room.Appliance(favorite: false, type: "Light Strip", isOn: true, strength: 100)),
                 ])
     ])
     

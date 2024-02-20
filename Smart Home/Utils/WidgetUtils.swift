@@ -45,4 +45,87 @@ public struct WidgetUtils {
             return onOff ? Color.black.opacity(0.7) : Color.white.opacity(0.8)
         }
     }
+    
+    func showFavorite(fav: Bool) -> some View {
+        return (
+            Image(systemName: fav ? "heart.fill" : "")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 20, height: 20)
+                .opacity(0.8)
+                .fixedSize()
+        )
+    }
+    
+    func powerButton(onOff: Bool, action: @escaping () -> Void) -> some View {
+        Button(action: {
+            action()
+        }) {
+            Image(systemName: "power")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 25, height: 25)
+                .fixedSize()
+        }
+        .frame(width: 40, height: 40)
+        .background(onOff ? Color.white.opacity(0.6) : Color.clear)
+        .clipShape(Circle())
+    }
+    
+    func favoriteButton(fav: Bool, action: @escaping () -> Void) -> some View {
+        return AnyView (
+            Button(
+                action: {
+                    action()
+                }) {
+                    Image(systemName: fav ? "heart.fill" : "heart")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 22, height: 22)
+                        .foregroundStyle(fav ? Color.red : Color.white)
+                        .fixedSize()
+            }
+                .frame(width: 40, height: 40)
+                .clipShape(Circle())
+        )
+    }
+    
+    func closeButton(action: @escaping () -> Void) -> some View {
+        return AnyView (
+            Button(action: {
+                action()
+            }) {
+                Image(systemName: "xmark")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 18, height: 18)
+                    .fixedSize()
+            }
+            .frame(width: 40, height: 40)
+            .clipShape(Circle())
+        )
+    }
+    
+    func sheetTitle(roomName: String, applianceData: Binding<Room.Appliance>, sheetToggle: Binding<Bool>) -> some View {
+        return HStack {
+            // Fav Button
+            WidgetUtils().favoriteButton(fav: applianceData.wrappedValue.favorite, action: {
+                applianceData.favorite.wrappedValue.toggle()
+            })
+            
+            Spacer()
+            
+            // Title
+            Text("\(roomName) \(applianceData.wrappedValue.type!)")
+                .font(.title2)
+                .padding(.horizontal, 20)
+            
+            Spacer()
+            
+            // Close Button
+            WidgetUtils().closeButton(action: {
+                sheetToggle.wrappedValue.toggle()
+            })
+        }
+    }
 }
