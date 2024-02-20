@@ -1,7 +1,10 @@
 # VisionOS Smart Home App prototype for Apple Vision Pro
 ### Work in Progress...
 
-![Room View](screenshots/room_view.png)
+<div style="display: flex; flex-direction: row;">
+  <img src="screenshots/room_view.png" alt="Room View" style="width: 50%;">
+  <img src="screenshots/room_camera_view.png" alt="Room Camera View" style="width: 50%;">
+</div>
 
 ## Overview
 
