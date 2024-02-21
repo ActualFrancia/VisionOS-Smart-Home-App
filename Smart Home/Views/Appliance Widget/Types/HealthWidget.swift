@@ -26,21 +26,14 @@ struct HealthWidget: View {
             VStack{
                 switch applianceData.type {
                 case "Air Quality Monitor":
-                    HStack {
-                        WidgetUtils().getSheetImage(type: "AQI")
-                        Text("Air Quality:")
-                            .fontWeight(.medium)
-                        Spacer()
-                        Text("\(applianceData.airQualityIndex!, specifier: "%.0f") • \(WidgetUtils().aqiString(aqi: applianceData.airQualityIndex!))")
-                    }
-                    HStack {
-                        WidgetUtils().getSheetImage(type: "PM")
-                        Text("Particulate Matter:")
-                        Spacer()
-                        Text("\(applianceData.particulateMatter!, specifier: "%.0f") μg/m³ • \(WidgetUtils().pmString(pm: applianceData.particulateMatter!))")
-                    }
+                    WidgetUtils().sheetList(type: "AQI", readApplianceData: applianceData)
+                    WidgetUtils().sheetList(type: "PM", readApplianceData: applianceData)
                 case "Dehumidifier":
-                    Text("TODO")
+                    WidgetUtils().sheetList(type: "Humidity", readApplianceData: applianceData)
+                    WidgetUtils().sheetList(type: "Water Level", readApplianceData: applianceData)
+                case "Humidifier":
+                    WidgetUtils().sheetList(type: "Humidity", readApplianceData: applianceData)
+                    WidgetUtils().sheetList(type: "Water Level", readApplianceData: applianceData)
                 default:
                     Text("ERROR")
                 }
@@ -54,6 +47,8 @@ struct HealthWidget: View {
             switch applianceData.type {
             case "Air Quality Monitor":
                 return "Air Quality • \(WidgetUtils().aqiString(aqi: applianceData.airQualityIndex!))"
+            case "Humidifier":
+                fallthrough
             case "Dehumidifier":
                 return "Humidity • \(applianceData.humidity!)%"
             default:

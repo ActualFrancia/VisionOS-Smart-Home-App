@@ -19,7 +19,7 @@ struct CameraWidget: View {
             VStack (alignment: .leading){
                 HStack (alignment: .top) {
                     WidgetUtils().getSystemImage(type: "Camera", isOn: true)
-
+                        .foregroundStyle(Color.blue.opacity(0.8))
                     
                     Spacer()
                     WidgetUtils().showFavorite(fav: applianceData.favorite, action: {

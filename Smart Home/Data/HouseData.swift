@@ -42,6 +42,7 @@ class HouseData: ObservableObject {
              appliances: [
                 ("Light", Room.Appliance(favorite: false, type: "Floor Lamp", isOn: true, strength: 100)),
                 ("Temperature", Room.Appliance(favorite: false, type: "Standing Fan", isOn: false, strength: 33, state: "Summer")),
+                ("Health", Room.Appliance(favorite: false, type: "Humidifier", isOn: false, humidity: 13, waterLevel: 2)),
                 ]),
         
         Room(name: "Front Door",

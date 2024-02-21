@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 public struct WidgetUtils {
+    // System Images for Widgets
     public func getSystemImage(type: String, isOn: Bool) -> some View {
         var systemImage: String
         
@@ -33,6 +34,8 @@ public struct WidgetUtils {
         // Health
         case "Dehumidifier":
             systemImage = "dehumidifier.fill"
+        case "Humidifier":
+            systemImage = "humidifier.and.droplets.fill"
         case "Air Quality Monitor":
             systemImage = "air.purifier.fill"
         default:
@@ -42,17 +45,24 @@ public struct WidgetUtils {
         return Image(systemName: systemImage)
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .foregroundColor(WidgetUtils().getColor(type: "Image", isOn: isOn))
+            .foregroundStyle(WidgetUtils().getColor(type: "\(type == "Camera" ? "Camera" : "Image")", isOn: isOn))
             .frame(height: 50)
             .fixedSize()
     }
     
+    // System Images for Widget sheets
     public func getSheetImage(type: String) -> some View {
         var systemImage: String
         
         switch type {
         case "AQI":
             systemImage = "aqi.medium"
+        case "PM":
+            systemImage = "aqi.low"
+        case "Humidity":
+            systemImage = "humidity.fill"
+        case "Water Level":
+            systemImage = "drop.circle"
         default:
             systemImage = ""
         }
@@ -64,6 +74,7 @@ public struct WidgetUtils {
             .fixedSize()
     }
     
+    // Widget isOn Color
     public func getColor(type: String, isOn: Bool) -> Color {
         switch type {
         case "Camera":
@@ -77,6 +88,7 @@ public struct WidgetUtils {
         }
     }
     
+    // Favorite icon on Widget
     func showFavorite(fav: Bool, action: @escaping () -> Void) -> some View {
         return (
             Button (action: {
@@ -95,6 +107,7 @@ public struct WidgetUtils {
         )
     }
     
+    // Widget Sheet Power Button
     func powerButton(onOff: Bool, action: @escaping () -> Void) -> some View {
         Button(action: {
             action()
@@ -110,6 +123,7 @@ public struct WidgetUtils {
         .clipShape(Circle())
     }
     
+    // Widget Sheet Favorite Button
     func favoriteButton(fav: Bool, action: @escaping () -> Void) -> some View {
         return AnyView (
             Button(
@@ -128,6 +142,7 @@ public struct WidgetUtils {
         )
     }
     
+    // Widget Sheet Close Button
     func closeButton(action: @escaping () -> Void) -> some View {
         return AnyView (
             Button(action: {
@@ -144,6 +159,7 @@ public struct WidgetUtils {
         )
     }
     
+    // Widget Sheet Titles
     func sheetTitle(roomName: String, applianceData: Binding<Room.Appliance>, sheetToggle: Binding<Bool>) -> some View {
         return HStack {
             // Fav Button
@@ -167,7 +183,43 @@ public struct WidgetUtils {
         }
     }
     
-    // AQI Int to String
+    // Sheet Listing
+    func sheetList(type: String, readApplianceData: Room.Appliance) -> some View {
+        HStack {
+            switch type {
+            // Air Quiality Monitor
+            case "AQI":
+                WidgetUtils().getSheetImage(type: "AQI")
+                Text("Air Quality:")
+                    .fontWeight(.medium)
+                Spacer()
+                Text("\(readApplianceData.airQualityIndex!, specifier: "%.0f") • \(WidgetUtils().aqiString(aqi: readApplianceData.airQualityIndex!))")
+            case "PM":
+                WidgetUtils().getSheetImage(type: "PM")
+                Text("Particulate Matter:")
+                    .fontWeight(.medium)
+                Spacer()
+                Text("\(readApplianceData.particulateMatter!, specifier: "%.0f") μg/m³ • \(WidgetUtils().pmString(pm: readApplianceData.particulateMatter!))")
+            case "Humidity":
+                WidgetUtils().getSheetImage(type: "Humidity")
+                Text("Humidity:")
+                    .fontWeight(.medium)
+                Spacer()
+                Text("\(readApplianceData.humidity!)%")
+            // Humidity
+            case "Water Level":
+                WidgetUtils().getSheetImage(type: "Water Level")
+                Text("Water Level:")
+                    .fontWeight(.medium)
+                Spacer()
+                Text("\(readApplianceData.waterLevel!)%")
+            default:
+                Text("No Info")
+            }
+        }
+    }
+    
+    // AQI to String
     func aqiString(aqi: Double) -> String {
         switch aqi {
         case 0...50:
@@ -181,6 +233,7 @@ public struct WidgetUtils {
         }
     }
     
+    // PM to String
     func pmString(pm: Double) -> String {
         switch pm {
         case 0...12:
