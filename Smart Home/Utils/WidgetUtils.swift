@@ -167,12 +167,11 @@ public struct WidgetUtils {
                 applianceData.favorite.wrappedValue.toggle()
             })
             
-            Spacer()
-            
             // Title
             Text("\(roomName) \(applianceData.wrappedValue.type!)")
                 .font(.title2)
-                .padding(.horizontal, 20)
+                .padding(.leading, 10)
+                .padding(.trailing, 30)
             
             Spacer()
             
