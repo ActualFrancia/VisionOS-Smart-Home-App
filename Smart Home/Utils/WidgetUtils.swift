@@ -50,6 +50,26 @@ public struct WidgetUtils {
             .fixedSize()
     }
     
+    // Room Title
+    func roomTitle(room: Room) -> some View {
+        return VStack (alignment: .leading) {
+            Text("\(room.name)")
+                .font(.title)
+            Text("Temperature: \(room.temperature, specifier: "%.1f")º")
+                .font((.subheadline))
+        }
+    }
+    
+    // Check if Room has Favorited Appliances
+    // Check if Room has Favorited Appliances
+    func checkRoomFavorites(room: Room, includeCamera: Bool) -> Bool {
+        return room.appliances.contains { (applianceType, appliance) in
+            return (applianceType != "Camera" || includeCamera) && appliance.favorite
+        }
+    }
+
+
+    
     // System Images for Widget sheets
     public func getSheetImage(type: String) -> some View {
         var systemImage: String
@@ -134,7 +154,6 @@ public struct WidgetUtils {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 22, height: 22)
-                        .foregroundStyle(fav ? Color.red : Color.white)
                         .fixedSize()
             }
                 .frame(width: 40, height: 40)
@@ -189,7 +208,7 @@ public struct WidgetUtils {
             // Air Quiality Monitor
             case "AQI":
                 WidgetUtils().getSheetImage(type: "AQI")
-                Text("Air Quality:")
+                Text("Air Quality Index:")
                     .fontWeight(.medium)
                 Spacer()
                 Text("\(readApplianceData.airQualityIndex!, specifier: "%.0f") • \(WidgetUtils().aqiString(aqi: readApplianceData.airQualityIndex!))")

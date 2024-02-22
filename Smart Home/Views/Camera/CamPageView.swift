@@ -14,6 +14,10 @@ struct CamPageView: View {
     var body: some View {
         VStack {
             HStack {
+                // TODO: Fix Tab Closing when Favorite is Toggled.
+                WidgetUtils().favoriteButton(fav: applianceData.favorite, action: {
+                    applianceData.favorite.toggle()
+                })
                 Text("\(roomName) Camera")
                     .font(.title2)
                 
@@ -24,7 +28,7 @@ struct CamPageView: View {
                     .padding(.horizontal, 10)
                     .background(
                         RoundedRectangle(cornerRadius: 20)
-                            .fill(Color.red)
+                            .fill(Color.red.opacity(0.9))
                     )
             }
             LiveCamView(roomName: roomName, camSize: "page")

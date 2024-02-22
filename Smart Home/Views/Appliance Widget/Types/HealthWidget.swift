@@ -28,6 +28,7 @@ struct HealthWidget: View {
                 case "Air Quality Monitor":
                     WidgetUtils().sheetList(type: "AQI", readApplianceData: applianceData)
                     WidgetUtils().sheetList(type: "PM", readApplianceData: applianceData)
+                    WidgetUtils().sheetList(type: "Humidity", readApplianceData: applianceData)
                 case "Dehumidifier":
                     WidgetUtils().sheetList(type: "Humidity", readApplianceData: applianceData)
                     WidgetUtils().sheetList(type: "Water Level", readApplianceData: applianceData)

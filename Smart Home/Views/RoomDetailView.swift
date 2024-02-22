@@ -12,14 +12,11 @@ struct RoomDetailView: View {
     
     var body: some View {
         VStack (alignment: .leading){
-            Text("\(room.name)")
-                .font(.title)
-                .padding(.top, 13)
-            Text("Temperature: \(room.temperature, specifier: "%.1f")º")
-                .font((.subheadline))
+            WidgetUtils().roomTitle(room: room)
+                .padding(.top, 16)
             
             // Applicance widgets
-            WidgetWrapper(room: $room)
+            WidgetWrapper(room: $room, favoritesOnly: false)
         }
         .frame(maxWidth: .infinity,
                maxHeight: .infinity,
