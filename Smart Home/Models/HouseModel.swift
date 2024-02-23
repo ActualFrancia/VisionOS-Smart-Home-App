@@ -12,7 +12,7 @@ struct Room: Identifiable {
     let id = UUID()
     var temperature: Double
     // Dictionary
-    var appliances: [(String, Appliance)]
+    var appliances: [(category: String, Appliance)]
     
     // Appliance
     struct Appliance {

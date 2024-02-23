@@ -20,7 +20,7 @@ struct ContentView: View {
                 }
             FavoritesTabView()
                 .tabItem {
-                    Image(systemName: "star.fill")
+                    Image(systemName: "heart.fill")
                     Text("Favorites")
                 }
             RoomTabView()
