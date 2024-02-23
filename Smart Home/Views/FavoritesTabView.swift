@@ -34,6 +34,8 @@ struct FavoritesTabView: View {
                 }
                 
                 ScrollView {
+                    // TODO: Rewrite ForEach Loop
+                    
                     ForEach (houseData.smartHome.rooms.indices, id:\.self) {i in
                         let room = houseData.smartHome.rooms[i]
                         

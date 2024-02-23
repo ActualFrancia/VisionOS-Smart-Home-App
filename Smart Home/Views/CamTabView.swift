@@ -7,9 +7,33 @@
 
 import SwiftUI
 
+// TODO: Rewrite ForEach Loop
+
 struct CamTabView: View {
+    @ObservedObject private var houseData = HouseData.shared
+
     var body: some View {
-        Text("Cam View")
+        VStack (alignment: .leading) {
+            Text("Cameras")
+                .font(.largeTitle)
+                .padding(.top, 16)
+            
+            ScrollView(.horizontal) {
+                HStack {
+                    ForEach (houseData.smartHome.rooms.indices, id:\.self) {i in
+                        let room = houseData.smartHome.rooms[i]
+                        
+                        ForEach (room.appliances.indices, id:\.self) {j in
+                            if (room.appliances[j].0 == "Camera") {
+                                CamPageView(roomName: room.name, applianceData: $houseData.smartHome.rooms[i].appliances[j].1)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 

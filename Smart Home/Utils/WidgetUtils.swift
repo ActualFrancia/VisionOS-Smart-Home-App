@@ -61,7 +61,6 @@ public struct WidgetUtils {
     }
     
     // Check if Room has Favorited Appliances
-    // Check if Room has Favorited Appliances
     func checkRoomFavorites(room: Room, includeCamera: Bool) -> Bool {
         return room.appliances.contains { (applianceType, appliance) in
             return (applianceType != "Camera" || includeCamera) && appliance.favorite
@@ -135,7 +134,7 @@ public struct WidgetUtils {
             Image(systemName: "power")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 23, height: 23)
+                .frame(width: 22, height: 22)
                 .fixedSize()
         }
         .frame(width: 40, height: 40)
@@ -153,7 +152,7 @@ public struct WidgetUtils {
                     Image(systemName: fav ? "heart.fill" : "heart")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 22, height: 22)
+                        .frame(width: 20, height: 20)
                         .fixedSize()
             }
                 .frame(width: 40, height: 40)
@@ -170,7 +169,7 @@ public struct WidgetUtils {
                 Image(systemName: "xmark")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 18, height: 18)
+                    .frame(width: 17, height: 17)
                     .fixedSize()
             }
             .frame(width: 40, height: 40)
