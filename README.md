@@ -1,14 +1,25 @@
 # VisionOS Smart Home App prototype for Apple Vision Pro
-### Work in Progress...
+<div style="display: flex; flex-direction: row; align-items: flex-start; gap: 1.5px">
 
-<div style="display: flex; flex-direction: row;">
-  <img src="screenshots/room_view.png" alt="Room View" style="width: 48%;">
-  <img src="screenshots/room_camera_view.png" alt="Room Camera View" style="width: 48%;">
+  <!-- Main Image -->
+  <img src="screenshots/Home.png" alt="Smart Home View" style="width: 48.2%; height: 48.2%">
+
+  <!-- Right Column -->
+  <div style="display: flex; flex-direction: column; width: 48%; gap: 5px">
+    <div style="display: flex; flex-direction: row; gap: 5px;">
+      <img src="screenshots/Favorites.png" alt="Image 1" style="width: 49.5%; height: 49.5%">
+      <img src="screenshots/Rooms.png" alt="Image 2"  style="width: 49.5%; height: 49.5%">
+    </div>
+    <div style="display: flex; flex-direction: row; gap: 5px">
+      <img src="screenshots/Camera.png" alt="Image 3"  style="width: 49.5%; height: 49.5%">
+      <img src="screenshots/Scenes.png" alt="Image 4"  style="width: 49.5%; height: 49.5%">
+    </div>
+  </div>
 </div>
 
 ## Overview
 
-This repository contains a work-in-progress build for a native Smart Home application prototype designed for the Apple Vision Pro, leveraging the power of spatial computing. It showcases the potential of a Smart Home app built on VisionOS and aims to demonstrate an intuitive user interface for controlling smart home devices within the Apple Vision Pro.
+This repository contains a build for a native Smart Home application prototype designed for the Apple Vision Pro, leveraging the power of spatial computing. It showcases the potential of a Smart Home app built on VisionOS and aims to demonstrate an intuitive user interface for controlling smart home devices within the Apple Vision Pro.
 
 ## Features
 
