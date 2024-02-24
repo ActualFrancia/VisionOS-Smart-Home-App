@@ -6,7 +6,7 @@
 
 ## Overview
 
-This repository contains a build for a native Smart Home application prototype designed for the Apple Vision Pro, leveraging the power of spatial computing. It showcases the potential of a Smart Home app built on VisionOS and aims to demonstrate an intuitive user interface for controlling smart home devices within the Apple Vision Pro.
+This repository contains a build for a native Smart Home application prototype designed for the Apple Vision Pro, leveraging the power of spatial computing. It showcases the potential of a Smart Home app built on VisionOS and aims to demonstrate an intuitive user interface for controlling smart home devices within the Apple Vision Pro. Designed & built all in 12 days.
 
 ## Features
 
