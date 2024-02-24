@@ -1,24 +1,12 @@
 # VisionOS Smart Home App prototype for Apple Vision Pro
-<div style="display: flex; flex-direction: row; align-items: flex-start; flex-wrap: nowrap">
-  <!-- Main Image -->
-  <img src="screenshots/Home.png" alt="Smart Home View" style="width: 48%; height: 48%">
 
-  <!-- Right Column -->
-  <div style="display: flex; flex-direction: column; flex-wrap: nowrap; width: 48%">
-    <div style="display: flex; flex-direction: row;">
-      <img src="screenshots/Favorites.png" alt="Image 1" style="width: 50%; height: 50%">
-      <img src="screenshots/Rooms.png" alt="Image 2"  style="width: 50%; height: 50%">
-    </div>
-    <div style="display: flex; flex-direction: row; flex-wrap: nowrap;">
-      <img src="screenshots/Camera.png" alt="Image 3"  style="width: 50%; height: 50%">
-      <img src="screenshots/Scenes.png" alt="Image 4"  style="width: 50%; height: 50%">
-    </div>
-  </div>
-</div>
+<p align="center">
+  <img src="screenshots/Home.png" alt="Smart Home View" width="30%" />
+</p>
 
 ## Overview
 
-This repository contains a build for a native Smart Home application prototype designed for the Apple Vision Pro, leveraging the power of spatial computing. It showcases the potential of a Smart Home app built on VisionOS and aims to demonstrate an intuitive user interface for controlling smart home devices within the Apple Vision Pro.
+This repository contains a work-in-progress build for a native Smart Home application prototype designed for the Apple Vision Pro, leveraging the power of spatial computing. It showcases the potential of a Smart Home app built on VisionOS and aims to demonstrate an intuitive user interface for controlling smart home devices within the Apple Vision Pro.
 
 ## Features
 
@@ -29,6 +17,18 @@ This repository contains a build for a native Smart Home application prototype d
 - **Live Camera Feed:** Access live camera footage from supported devices, providing real-time footage within the app.
 
 - **Favorites:** New! Favorite your frequently used smart home appliances for quick access via the Favorites tab.
+
+## Screenshots
+
+<p align="center">
+  <img src="screenshots/Favorites.png" alt="Favorites View" width="45%" />
+  <img src="screenshots/Rooms.png" alt="Rooms View" width="45%" />
+</p>
+<p align="center">
+  <img src="screenshots/Camera.png" alt="Camera View" width="45%" />
+  <img src="screenshots/Scenes.png" alt="Scenes View" width="45%" />
+  <!-- Add more images as needed -->
+</p>
 
 ## Technologies Used
 
