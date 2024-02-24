@@ -1,7 +1,7 @@
 # VisionOS Smart Home App prototype for Apple Vision Pro
 
 <p align="center">
-  <img src="screenshots/Home.png" alt="Smart Home View" width="30%" />
+  <img src="screenshots/Home.png" alt="Smart Home View" width="80%" height="80%" />
 </p>
 
 ## Overview
