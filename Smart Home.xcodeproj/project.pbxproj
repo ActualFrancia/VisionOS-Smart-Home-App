@@ -20,6 +20,7 @@
 		9125AF712B7B044F0026F9B9 /* FavoritesTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9125AF702B7B044F0026F9B9 /* FavoritesTabView.swift */; };
 		912EA3ED2B8925CE00186B59 /* HouseSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912EA3EC2B8925CE00186B59 /* HouseSceneModel.swift */; };
 		912EA3EF2B8926FF00186B59 /* HouseSceneData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912EA3EE2B8926FF00186B59 /* HouseSceneData.swift */; };
+		9160FFA22B8A8AF3003B43B2 /* SceneUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160FFA12B8A8AF3003B43B2 /* SceneUtils.swift */; };
 		91B7A16B2B7B0A5A003A70EF /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B7A16A2B7B0A5A003A70EF /* HomeTabView.swift */; };
 		91B7A16D2B7B0BC3003A70EF /* HouseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B7A16C2B7B0BC3003A70EF /* HouseModel.swift */; };
 		91B7A1702B7B0E1B003A70EF /* HouseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B7A16F2B7B0E1B003A70EF /* HouseData.swift */; };
@@ -61,6 +62,7 @@
 		9125AF702B7B044F0026F9B9 /* FavoritesTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTabView.swift; sourceTree = "<group>"; };
 		912EA3EC2B8925CE00186B59 /* HouseSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseSceneModel.swift; sourceTree = "<group>"; };
 		912EA3EE2B8926FF00186B59 /* HouseSceneData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseSceneData.swift; sourceTree = "<group>"; };
+		9160FFA12B8A8AF3003B43B2 /* SceneUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneUtils.swift; sourceTree = "<group>"; };
 		91B7A16A2B7B0A5A003A70EF /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
 		91B7A16C2B7B0BC3003A70EF /* HouseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseModel.swift; sourceTree = "<group>"; };
 		91B7A16F2B7B0E1B003A70EF /* HouseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseData.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				91BBCD792B82B76B00032431 /* WidgetUtils.swift */,
+				9160FFA12B8A8AF3003B43B2 /* SceneUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				912EA3ED2B8925CE00186B59 /* HouseSceneModel.swift in Sources */,
 				91BF19982B83ECAA00D5CAB9 /* CamPageView.swift in Sources */,
 				91B7A1722B7B0F58003A70EF /* RoomDetailView.swift in Sources */,
+				9160FFA22B8A8AF3003B43B2 /* SceneUtils.swift in Sources */,
 				9125AF6B2B7B04220026F9B9 /* RoomTabView.swift in Sources */,
 				9125AF712B7B044F0026F9B9 /* FavoritesTabView.swift in Sources */,
 				91025D202B7AB558005A6AB7 /* ContentView.swift in Sources */,

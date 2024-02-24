@@ -12,7 +12,6 @@ struct houseScene: Identifiable {
     let name: String
     let subtitle: String
     let image: String
-    let color: Color
     let id = UUID()
     
     // Rooms & Appliances
