@@ -10,7 +10,7 @@ This repository contains a work-in-progress build for a native Smart Home applic
 
 ## Features
 
-- **Device Control:** Easily manage and control various smart home devices such as lights, thermostats, and cameras.
+- **Device Control:** Easily manage and control various smart home devices such as lights, thermostats, cameras, and health devices.
 
 - **Room Details:** Explore detailed information about each room, including temperature, device status, and specific controls.
 
